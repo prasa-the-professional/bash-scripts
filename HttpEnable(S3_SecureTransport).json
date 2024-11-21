@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Id": "EnableHTTP",
+    "Statement": [
+        {
+            "Sid": "AddPerm",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": "<arn_of_the_bucket>",
+            "Condition": {
+                "Bool": {
+                    "aws:SecureTransport": "true"
+                }
+            }
+        }
+    ]
+}
